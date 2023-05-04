@@ -1,5 +1,32 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require('cors');
+const dbConn = require("./db/dbconfig.js");
+//const mongoose = require("mongoose");  decided to go with MySQL instead of mongodb
+//require("./db/dbconfig.js");
 const app = express();
+app.use(cors());
+app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({limit: "50mb",extended: true}));
+
+
+/*const dbcon = async () =>{
+    mongoose.connect("mongodb://localhost:27017/hslbike");
+    const bikedataSchema = new mongoose.Schema({});
+    const bikedata = mongoose.model("bikedata", bikedataSchema);
+    const data = await bikedata.find();
+    console.warn(data)
+}*/
+app.get('/Duration', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select count(*) from 2021_05 where Duration=20', function (error, results) {
+            if (error) throw error;
+            console.log("Durations fetched");
+            res.send(results);
+        })
+    })
+})
+
 app.get("/",(req,res)=>{
     res.send("testing")
 
