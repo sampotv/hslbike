@@ -1,22 +1,43 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function front() {
 
-const [ test, setTest ] = useState([]);
+    const [ station, setStation] = useState([]);
 
-useEffect(async () => {
-    const alltest = await fetch('http://localhost:5000/Duration').then((res) =>
-    res.json()
-    )
-    console.log(alltest)
-    setTest(alltest)
-})
+    /* just used for testing the database connection
+const [ test, setTest ] = useState([]);
+useEffect( () => {
+    async function duration() {
+    const response = await axios.get(
+    `http://localhost:5000/Duration`);
+    setTest(response.data); }
+    duration();
+}, [])
+*/
+
+useEffect( () => {
+    async function station() {
+    const response = await axios.get(
+    `http://localhost:5000/Stations`);
+    setStation(response.data); }
+    station();
+}, [])
+
 
 return (
     <div>
         <h1>Test text</h1>
+        {station.map((station) =>
+        
+            <div className='stationoutput' ><div className='' >{station.DepartureStationId }
+            {station.DepartureStationName }</div></div>
+        
+       
+           
+            )}
     </div>
 )
 }

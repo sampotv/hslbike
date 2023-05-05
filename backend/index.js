@@ -17,6 +17,8 @@ app.use(bodyParser.urlencoded({limit: "50mb",extended: true}));
     const data = await bikedata.find();
     console.warn(data)
 }*/
+
+//Just used to test that the database connection works and print some value to the browser
 app.get('/Duration', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select count(*) from 2021_05 where Duration=20', function (error, results) {
@@ -26,6 +28,18 @@ app.get('/Duration', function(req, res) {
         })
     })
 })
+
+//Get all the stations from database
+app.get('/Stations', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select distinct DepartureStationId, DepartureStationName from 2021_05', function (error, results) {
+            if (error) throw error;
+            console.log("Stations fetched");
+            res.send(results);
+        })
+    })
+})
+
 
 app.get("/",(req,res)=>{
     res.send("testing")
