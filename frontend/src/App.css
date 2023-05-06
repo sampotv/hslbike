@@ -7,9 +7,26 @@
 }
 .topbarback{
   background-color: lightblue;
+  position: sticky; top: 0;
+  
+}
+
+.footerWrapper {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: stretch;
+  margin-top: 100px;
+  padding-bottom: 40px;
+  background-color: #221f1f;
+  color: #f5f5f5;
+  font-size: 12px;
+  min-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .footer{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: lightblue;
@@ -22,6 +39,30 @@
   padding-right: 2%;
 }
 
-.paddingright{
-  padding-right: 2%;
+.formflex{
+  
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+}
+.formboxnumber{ 
+  
+  border: 2px solid grey; 
+  display: flex;
+  flex-direction: row;
+  width: 40px;
+  margin-left: 10px;
+  margin-top: 1px;
+}
+.formbox{ 
+  
+  border: 2px solid grey; 
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  margin-left: 10px;
+  margin-top: 1px;
+}
+.slidetextright{
+  margin-left: 2px;
 }

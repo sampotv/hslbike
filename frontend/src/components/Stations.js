@@ -45,8 +45,3 @@ return (
     </div>
 )
 }
-
-/*
-            <div className='stationoutput' ><div className='' >{station.DepartureStationId }
-            {station.DepartureStationName }</div></div>
-            */
