@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Topbar from './components/Topbar';
 import Stations from './components/Stations'
+import Statistics from './components/Statistics'
 import Frontpage from './components/Frontpage';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Routes>
       <Route path="/" element={ <Frontpage/> }/>
       <Route path="/Stations" element={ <Stations/> }/>
+      <Route path="/Statistics" element={ <Statistics/>}/>
       <Route path="/Logout" element={<h2>Logout</h2>}/>
       
     </Routes>

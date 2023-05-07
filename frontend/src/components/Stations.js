@@ -18,6 +18,7 @@ useEffect( () => {
 }, [])
 */
 
+//get all the stations with the station id
 useEffect( () => {
     async function station() {
     const response = await axios.get(
@@ -30,18 +31,19 @@ useEffect( () => {
 return (
     <div>
         <h1>Test text</h1>
+        <div className='formflex' >
+        <div className='slidetextright2'><h3>id</h3></div>
+        <div className='slidetextright2'><h3>Station name</h3></div></div>
         {station.map((station) =>
-        
-
-                          <div className='formflex' >
-                          <div className='formboxnumber' ><div className='slidetextright' >{station.DepartureStationId}</div></div>
-                          <div className='formbox' ><div className='slidetextright'>{station.DepartureStationName} </div></div>
+            <div className='formflex' >
+            <div className='formboxnumber' ><div className='slidetextright' >{station.DepartureStationId}</div></div>
+            <div className='formbox' ><div className='slidetextright'>{station.DepartureStationName} </div></div>
                           
                           
-                            </div>
+            </div>
        
            
-            )}
+        )}
     </div>
 )
 }

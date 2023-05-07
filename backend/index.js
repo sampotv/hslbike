@@ -32,7 +32,7 @@ app.get('/Duration', function(req, res) {
 //Get all the stations from database
 app.get('/Stations', function(req, res) {
     dbConn.getConnection(function() {
-        dbConn.query('select distinct DepartureStationId, DepartureStationName from 2021_05', function (error, results) {
+        dbConn.query('select distinct DepartureStationId, DepartureStationName from 2021_05 ORDER BY DepartureStationId ASC', function (error, results) {
             if (error) throw error;
             console.log("Stations fetched");
             res.send(results);
@@ -40,6 +40,26 @@ app.get('/Stations', function(req, res) {
     })
 })
 
+//Get longest distance drives and the start point
+app.get('/Statdis', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select distinct DepartureStationId, DepartureStationName, CoveredDistance from 2021_05 ORDER BY CoveredDistance DESC limit 100', function (error, results) {
+            if (error) throw error;
+            console.log("Stations fetched");
+            res.send(results);
+        })
+    })
+})
+//Get longest time drives and the start point
+app.get('/Statdur', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select distinct DepartureStationId, DepartureStationName, Duration from 2021_05 ORDER BY Duration DESC limit 100', function (error, results) {
+            if (error) throw error;
+            console.log("Stations fetched");
+            res.send(results);
+        })
+    })
+})
 
 app.get("/",(req,res)=>{
     res.send("testing")
