@@ -18,7 +18,7 @@ useEffect( () => {
 }, [])
 */
 
-//get all the stations with the station id
+//Function to get all the stations with the station id
 useEffect( () => {
     async function station() {
     const response = await axios.get(
