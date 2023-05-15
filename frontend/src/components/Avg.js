@@ -32,7 +32,7 @@ useEffect( () => {
 useEffect( () => {
     async function departure() {
     const response = await axios.get(
-    `http://localhost:5000/MostDeparture`);
+    `http://localhost:5000/MostDeparture10`);
     setDeparture(response.data); }
     departure();
 }, [])
@@ -41,7 +41,7 @@ useEffect( () => {
 useEffect( () => {
     async function returnstation() {
     const response = await axios.get(
-    `http://localhost:5000/MostReturn`);
+    `http://localhost:5000/MostReturn10`);
     setReturnstation(response.data); }
     returnstation();
 }, [])
@@ -84,6 +84,7 @@ return (
         )}
         </div>
         </div>
+        <Link to="/Allrides">Click here to see all rides from and to stations</Link> 
     </div>
 )
 }

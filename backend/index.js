@@ -84,8 +84,8 @@ app.get('/AverageDistance', function(req, res) {
     })
 })
 
-//Get average distance of trips
-app.get('/MostDeparture', function(req, res) {
+//Get top10 departure stations
+app.get('/MostDeparture10', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select DepartureStationName, count(*) as Occurrence from 2021_05 group by DepartureStationName order by Occurrence DESC limit 10;', function (error, results) {
             if (error) throw error;
@@ -95,8 +95,8 @@ app.get('/MostDeparture', function(req, res) {
     })
 })
 
-//Get average distance of trips
-app.get('/MostReturn', function(req, res) {
+//Get top10 return stations
+app.get('/MostReturn10', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select ReturnStationName, count(*) as Occurrence from 2021_05 group by ReturnStationName order by Occurrence DESC limit 10;', function (error, results) {
             if (error) throw error;
@@ -106,6 +106,27 @@ app.get('/MostReturn', function(req, res) {
     })
 })
 
+//Get all departure stations
+app.get('/MostDepartureAll', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select DepartureStationName, count(*) as Occurrence from 2021_05 group by DepartureStationName order by Occurrence DESC;', function (error, results) {
+            if (error) throw error;
+            console.log("departurestations fetched");
+            res.send(results);
+        })
+    })
+})
+
+//Get all return stations
+app.get('/MostReturnAll', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select ReturnStationName, count(*) as Occurrence from 2021_05 group by ReturnStationName order by Occurrence DESC;', function (error, results) {
+            if (error) throw error;
+            console.log("returnstations fetched");
+            res.send(results);
+        })
+    })
+})
 //Get longest time drives and the start point
 app.get('/Statdur', function(req, res) {
     dbConn.getConnection(function() {

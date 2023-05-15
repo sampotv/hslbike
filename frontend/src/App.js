@@ -6,6 +6,7 @@ import Stations from './components/Stations';
 import Statistics from './components/Statistics';
 import Frontpage from './components/Frontpage';
 import Avg from './components/Avg';
+import Allrides from './components/Allrides';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/Statistics" element={ <Statistics/>}/>
       <Route path="/Logout" element={<h2>Logout</h2>}/>
       <Route path="/Avg" element={<Avg/>}/>
+      <Route path="/Allrides" element={<Allrides/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>
