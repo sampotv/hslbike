@@ -18,7 +18,7 @@ useEffect( () => {
 
 return (
     <div>
-        <h1>Test text</h1>
+        <h2>List of longest rides and the start station</h2>
         {station.map((station) =>
         
 
