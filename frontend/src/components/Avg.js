@@ -165,7 +165,7 @@ return (
         )}        
         </div>
         </div>
-        <Link to="/Allrides">Click here to see all rides from and to stations</Link> 
+        <div className='paddingDown'><Link to="/Allrides">Click here to see all rides from and to stations</Link> </div>
     </div>
 )
 }

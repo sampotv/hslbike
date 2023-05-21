@@ -18,6 +18,9 @@
   background-color: lightblue;
   text-align: center;
 }
+.paddingDown{
+  padding-bottom: 8%;
+}
 
 .stationoutput{
   text-align: left;
@@ -25,12 +28,12 @@
   padding-right: 2%;
 }
 
-.formflex{
-  
+.formflex{ 
   display: flex;
   flex-direction: row;
   margin-left: 5%;
 }
+
 .formboxnumber{ 
   
   border: 2px solid grey; 
