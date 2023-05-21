@@ -11,6 +11,8 @@ export default function front() {
     const [ returnstation05, setReturnstation05] = useState([]);
     const [ departure06, setDeparture06] = useState([]);
     const [ returnstation06, setReturnstation06] = useState([]);
+    const [ departure07, setDeparture07] = useState([]);
+    const [ returnstation07, setReturnstation07] = useState([]);
 
 //Function to get average distance that bike travels per each rental
 useEffect( () => {
@@ -63,6 +65,23 @@ useEffect( () => {
     `http://localhost:5000/MostReturn10_06`);
     setReturnstation06(response.data); }
     returnstation06();
+}, [])
+//Function to get top 10 stations with most bike departures from 2021 07
+useEffect( () => {
+    async function departure07() {
+    const response = await axios.get(
+    `http://localhost:5000/MostDeparture10_07`);
+    setDeparture07(response.data); }
+    departure07();
+}, [])
+
+//Function to get top 10 stations with most bike returns from 2021 07
+useEffect( () => {
+    async function returnstation07() {
+    const response = await axios.get(
+    `http://localhost:5000/MostReturn10_07`);
+    setReturnstation07(response.data); }
+    returnstation07();
 }, [])
 
 return (
@@ -121,7 +140,29 @@ return (
                 <div className='' ><div className='slidetextright' >
                     {returnstation06.Occurrence}</div></div>                                    
                 </div>          
+        )}        
+        </div>
+        </div>
+        <div className='row' >
+        <div className='column' ><div className='moststationtopic' >Top 10 most bikes departured stations 07-2021</div>
+        {departure07.map((departure07) =>       
+                <div className='formflex' >
+                <div className='moststationwidth' >
+                    {departure07.DepartureStationName}</div>
+                <div className='' ><div className='slidetextright' >
+                    {departure07.Occurrence}</div></div>                                      
+                </div>          
         )}
+        </div> 
+        <div className='column' ><div className='moststationtopic' >Top 10 most bikes returned stations 07-2021</div>
+        {returnstation07.map((returnstation07) =>       
+                <div className='formflex' >
+                <div className='moststationwidth' >
+                    {returnstation07.ReturnStationName}</div>
+                <div className='' ><div className='slidetextright' >
+                    {returnstation07.Occurrence}</div></div>                                    
+                </div>          
+        )}        
         </div>
         </div>
         <Link to="/Allrides">Click here to see all rides from and to stations</Link> 

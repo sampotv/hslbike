@@ -126,6 +126,27 @@ app.get('/MostReturn10_06', function(req, res) {
         })
     })
 })
+//Get top10 departure stations 2021 07
+app.get('/MostDeparture10_07', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select DepartureStationName, count(*) as Occurrence from 2021_07 group by DepartureStationName order by Occurrence DESC limit 10;', function (error, results) {
+            if (error) throw error;
+            console.log("departurestations fetched");
+            res.send(results);
+        })
+    })
+})
+
+//Get top10 return stations 2021 07
+app.get('/MostReturn10_07', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select ReturnStationName, count(*) as Occurrence from 2021_07 group by ReturnStationName order by Occurrence DESC limit 10;', function (error, results) {
+            if (error) throw error;
+            console.log("returnstations fetched");
+            res.send(results);
+        })
+    })
+})
 //Get all departure stations 2021 05
 app.get('/MostDepartureAll05', function(req, res) {
     dbConn.getConnection(function() {
@@ -162,6 +183,27 @@ app.get('/MostDepartureAll06', function(req, res) {
 app.get('/MostReturnAll06', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select ReturnStationName, count(*) as Occurrence from 2021_06 group by ReturnStationName order by Occurrence DESC;', function (error, results) {
+            if (error) throw error;
+            console.log("returnstations fetched");
+            res.send(results);
+        })
+    })
+})
+//Get all departure stations 2021 07
+app.get('/MostDepartureAll07', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select DepartureStationName, count(*) as Occurrence from 2021_07 group by DepartureStationName order by Occurrence DESC;', function (error, results) {
+            if (error) throw error;
+            console.log("departurestations fetched");
+            res.send(results);
+        })
+    })
+})
+
+//Get all return stations from 2021 07
+app.get('/MostReturnAll07', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select ReturnStationName, count(*) as Occurrence from 2021_07 group by ReturnStationName order by Occurrence DESC;', function (error, results) {
             if (error) throw error;
             console.log("returnstations fetched");
             res.send(results);
