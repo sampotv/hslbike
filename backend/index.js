@@ -29,10 +29,21 @@ app.get('/Duration', function(req, res) {
     })
 })
 
-//Get all the stations from database
-app.get('/Stations', function(req, res) {
+//Get all the stations from database search full table for distinct stations
+app.get('/Stationsdistinct', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select distinct DepartureStationId, DepartureStationName from 2021_05 ORDER BY DepartureStationId ASC', function (error, results) {
+            if (error) throw error;
+            console.log("Stations fetched");
+            res.send(results);
+        })
+    })
+})
+
+//Get all the stations from database table stations and print id, name, address
+app.get('/Stations', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select distinct ID, Nimi, Osoite from stations ORDER BY ID ASC', function (error, results) {
             if (error) throw error;
             console.log("Stations fetched");
             res.send(results);

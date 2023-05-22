@@ -36,14 +36,14 @@ return (
         <div className='slidetextright2'><h3>Station name</h3></div></div>
         {station.map((station) =>
             <div className='formflex' >
-            <div className='formboxnumber' ><div className='slidetextright' >{station.DepartureStationId}</div></div>
-            <div className='formbox' ><div className='slidetextright'>{station.DepartureStationName} </div></div>
-                          
+            <div className='formboxnumber' ><div className='slidetextright' >{station.ID}</div></div>
+            <div className='formbox' ><div className='slidetextright'>{station.Nimi} </div></div>
+            <div className='formbox' ><div className='slidetextright'>{station.Osoite} </div></div>              
                           
             </div>
-       
            
         )}
+        <div className='paddingDown'></div>
     </div>
 )
 }
