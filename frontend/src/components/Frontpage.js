@@ -17,7 +17,7 @@ useEffect( () => {
     duration();
 }, [])
 */
-
+/* Used just for testing purposes
 useEffect( () => {
     async function station() {
     const response = await axios.get(
@@ -25,12 +25,7 @@ useEffect( () => {
     setStation(response.data); }
     station();
 }, [])
-
-
-return (
-    <div>
-        <h1>Test text</h1>
-        {station.map((station) =>
+{station.map((station) =>
         
 
                           <div className='formflex' >
@@ -42,6 +37,17 @@ return (
        
            
             )}
+*/
+
+return (
+    <div>
+        <h3>This project was done as pre-assignment for Solita Dev Academy Finland 2023. The data is owned by City Bike Finland.</h3>
+        <h3>Database edited, all entries with longer duration than 3hours deleted. Shorter rides than 10m have been deleted.</h3>
+        <h2>Use the links on topbar to browse through data.</h2>
+        <div className='frontBottom'>
+            <p>Created by Sampo Vuorento, link to project Github page https://github.com/sampotv/hslbike</p>
+            <p>Original pre-assignment Github https://github.com/solita/dev-academy-2023-exercise</p>
+        </div>
     </div>
 )
 }
