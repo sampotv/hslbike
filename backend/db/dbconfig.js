@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 
+//database information
 var dbConn = mysql.createPool({
 	host:'localhost',
 	user:'hsluser',

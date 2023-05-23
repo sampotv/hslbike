@@ -33,7 +33,8 @@ return (
         <h1>Test text</h1>
         <div className='formflex' >
         <div className='slidetextright2'><h3>id</h3></div>
-        <div className='slidetextright2'><h3>Station name</h3></div></div>
+        <div className='slidetextright2'><h3>Station name</h3></div>
+        <div className='slidetextright3'><h3>Station address</h3></div></div>
         {station.map((station) =>
             <div className='formflex' >
             <div className='formboxnumber' ><div className='slidetextright' >{station.ID}</div></div>
