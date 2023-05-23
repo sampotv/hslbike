@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({limit: "50mb",extended: true}));
 
 
 /*const dbcon = async () =>{
-    mongoose.connect("mongodb://localhost:27017/hslbike");
+    mongoose.connect("mongodb://88.112.129.105:27017/hslbike");
     const bikedataSchema = new mongoose.Schema({});
     const bikedata = mongoose.model("bikedata", bikedataSchema);
     const data = await bikedata.find();
@@ -236,6 +236,7 @@ app.get("/",(req,res)=>{
     res.send("testing")
 
 });
+//describe port 5000 to make database calls
 app.listen(5000);
 /*PORT=5000;
 app.listen(process.env.PORT | PORT, () =>{

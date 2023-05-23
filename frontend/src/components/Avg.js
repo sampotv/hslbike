@@ -18,7 +18,7 @@ export default function front() {
 useEffect( () => {
     async function distance() {
     const response = await axios.get(
-    `http://localhost:5000/AverageDistance`);
+    `http://88.112.129.105:5000/AverageDistance`);
     setDistance(response.data); }
     distance();
 }, [])
@@ -27,7 +27,7 @@ useEffect( () => {
 useEffect( () => {
     async function duration() {
     const response = await axios.get(
-    `http://localhost:5000/AverageDuration`);
+    `http://88.112.129.105:5000/AverageDuration`);
     setDuration(response.data); }
     duration();
 }, [])
@@ -36,7 +36,7 @@ useEffect( () => {
 useEffect( () => {
     async function departure05() {
     const response = await axios.get(
-    `http://localhost:5000/MostDeparture10_05`);
+    `http://88.112.129.105:5000/MostDeparture10_05`);
     setDeparture05(response.data); }
     departure05();
 }, [])
@@ -45,7 +45,7 @@ useEffect( () => {
 useEffect( () => {
     async function returnstation05() {
     const response = await axios.get(
-    `http://localhost:5000/MostReturn10_05`);
+    `http://88.112.129.105:5000/MostReturn10_05`);
     setReturnstation05(response.data); }
     returnstation05();
 }, [])
@@ -53,7 +53,7 @@ useEffect( () => {
 useEffect( () => {
     async function departure06() {
     const response = await axios.get(
-    `http://localhost:5000/MostDeparture10_06`);
+    `http://88.112.129.105:5000/MostDeparture10_06`);
     setDeparture06(response.data); }
     departure06();
 }, [])
@@ -62,7 +62,7 @@ useEffect( () => {
 useEffect( () => {
     async function returnstation06() {
     const response = await axios.get(
-    `http://localhost:5000/MostReturn10_06`);
+    `http://88.112.129.105:5000/MostReturn10_06`);
     setReturnstation06(response.data); }
     returnstation06();
 }, [])
@@ -70,7 +70,7 @@ useEffect( () => {
 useEffect( () => {
     async function departure07() {
     const response = await axios.get(
-    `http://localhost:5000/MostDeparture10_07`);
+    `http://88.112.129.105:5000/MostDeparture10_07`);
     setDeparture07(response.data); }
     departure07();
 }, [])
@@ -79,7 +79,7 @@ useEffect( () => {
 useEffect( () => {
     async function returnstation07() {
     const response = await axios.get(
-    `http://localhost:5000/MostReturn10_07`);
+    `http://88.112.129.105:5000/MostReturn10_07`);
     setReturnstation07(response.data); }
     returnstation07();
 }, [])
