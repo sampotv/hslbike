@@ -12,4 +12,4 @@ load data infile '2021-06.csv' into table 2021_06 fields terminated by ',' ignor
 load data infile '2021-07.csv' into table 2021_07 fields terminated by ',' ignore 1 rows;
 load data infile 'stations.csv' into table stations fields terminated by ',' lines terminated by '\r\n' ignore 1 rows;
 
-To get application work locally you need to change 88.112.129.105 to localhost in /backend/index.js and in all frontend components.
+To get application work locally you need to change 88.112.129.105 in all frontend components.

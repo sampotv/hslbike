@@ -231,7 +231,7 @@ app.get('/MostReturnAll07', function(req, res) {
 //Count the top10 busiest rental days from 2021 05
 app.get('/top10day05', function(req, res) {
     dbConn.getConnection(function() {
-        dbConn.query('select count(*) as cnt, date(Departure) as Departure_date from 2021_05 group by Departure_date order by count(*) desc limit 10', function (error, results) {
+        dbConn.query('select count(*) as cnt, date_format(Departure, "%d.%m.%Y") as Departure_date from 2021_05 group by Departure_date order by count(*) desc limit 10', function (error, results) {
             if (error) throw error;
             console.log("Days fetched");
             res.send(results);
@@ -241,7 +241,7 @@ app.get('/top10day05', function(req, res) {
 //Count the top10 busiest rental days from 2021 06
 app.get('/top10day06', function(req, res) {
     dbConn.getConnection(function() {
-        dbConn.query('select count(*) as cnt, date(Departure) as Departure_date from 2021_06 group by Departure_date order by cnt desc limit 10',
+        dbConn.query('select count(*) as cnt, date_format(Departure, "%d.%m.%Y") as Departure_date from 2021_06 group by Departure_date order by cnt desc limit 10',
         function (error, results) {
             if (error) throw error;
             console.log("Days fetched");
@@ -252,7 +252,7 @@ app.get('/top10day06', function(req, res) {
 //Count the top10 busiest rental days from 2021 07
 app.get('/top10day07', function(req, res) {
     dbConn.getConnection(function() {
-        dbConn.query('select count(*) as cnt, date(Departure) as Departure_date from 2021_07 group by Departure_date order by cnt desc limit 10', function (error, results) {
+        dbConn.query('select count(*) as cnt, date_format(Departure, "%d.%m.%Y") as Departure_date from 2021_07 group by Departure_date order by cnt desc limit 10', function (error, results) {
             if (error) throw error;
             console.log("Days fetched");
             res.send(results);
