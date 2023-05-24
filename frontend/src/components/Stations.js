@@ -53,7 +53,7 @@ return (
             <div className='formboxnumber' ><div className='slidetextright' >{station.ID}</div></div>
             <div className='formbox' ><div className='slidetextright'>{station.Nimi} </div></div>
             <div className='formbox' ><div className='slidetextright'>{station.Osoite} </div></div>              
-                          
+            <div><Link to={`/Stations/${station.ID}`}><button className='homeMenuButton' >Open station info</button></Link></div>   
             </div>
             )) : <div>No results, try other keyword</div> }
         

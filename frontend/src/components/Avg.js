@@ -71,13 +71,13 @@ return (
         {distance05.map((distance05) =>
                 <div className='formflex' ><div className='formflex'> Average distance of a ride </div>
                 <div className='formboxnumber' ><div className='slidetextright' >
-                    {distance05.AverageDistance}</div></div ><div className='slidetextright'> meters</div>                        
+                    {distance05.AverageDistance}</div></div ><div className='slidetextright'> kilometers</div>                        
                 </div>
         )}
         {duration05.map((duration05) =>       
                 <div className='formflex' ><div className='formflex'>Average duration of a ride </div>
                 <div className='formboxnumber' ><div className='slidetextright' >
-                    {duration05.AverageDuration}</div></div><div className='slidetextright'>seconds</div>                                      
+                    {duration05.AverageDuration}</div></div><div className='slidetextright'>minutes</div>                                      
                 </div>          
         )}
         </div>
