@@ -28,6 +28,12 @@
 }
 .paddingTop{
   padding-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.margin{
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .stationoutput{
   text-align: left;

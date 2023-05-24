@@ -41,9 +41,9 @@ useEffect( () => {
 
 return (
     <div>
-        <h3>This project was done as pre-assignment for Solita Dev Academy Finland 2023. The data is owned by City Bike Finland.</h3>
-        <h3>Database edited, all entries with longer duration than 3hours deleted. Shorter rides than 10m have been deleted.</h3>
-        <h2>Use the links on topbar to browse through data.</h2>
+        <h3 className='margin'>This project was done as pre-assignment for Solita Dev Academy Finland 2023. The data is owned by City Bike Finland.</h3>
+        <h3 className='margin'>Database edited, all entries with longer duration than 3hours deleted. Shorter rides than 10m have been deleted.</h3>
+        <h2 className='margin'>Use the links on topbar to browse through data.</h2>
         <h4 className='paddingTop'>Because of this project I decided to build a server computer at home. This project is now running on my brand new Ubuntu server. Be patient database is huge and server is slow.</h4>
         <div className='frontBottom'>
             <p>Created by Sampo Vuorento, link to project Github page https://github.com/sampotv/hslbike</p>
