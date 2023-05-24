@@ -5,167 +5,115 @@ import axios from 'axios';
 
 export default function front() {
 
-    const [ distance, setDistance] = useState([]);
-    const [ duration, setDuration] = useState([]);
-    const [ departure05, setDeparture05] = useState([]);
-    const [ returnstation05, setReturnstation05] = useState([]);
-    const [ departure06, setDeparture06] = useState([]);
-    const [ returnstation06, setReturnstation06] = useState([]);
-    const [ departure07, setDeparture07] = useState([]);
-    const [ returnstation07, setReturnstation07] = useState([]);
+    const [ distance05, setDistance05] = useState([]);
+    const [ duration05, setDuration05] = useState([]);
+    const [ distance06, setDistance06] = useState([]);
+    const [ duration06, setDuration06] = useState([]);
+    const [ distance07, setDistance07] = useState([]);
+    const [ duration07, setDuration07] = useState([]);
 
 //Function to get average distance that bike travels per each rental
 useEffect( () => {
-    async function distance() {
+    async function distance05() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDistance`);
-    setDistance(response.data); }
-    distance();
+    `http://88.112.129.105:5000/AverageDistance05`);
+    setDistance05(response.data); }
+    distance05();
 }, [])
 
 //Function to get average time of each bike rental
 useEffect( () => {
-    async function duration() {
+    async function duration05() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDuration`);
-    setDuration(response.data); }
-    duration();
+    `http://88.112.129.105:5000/AverageDuration05`);
+    setDuration05(response.data); }
+    duration05();
+}, [])
+//Function to get average distance that bike travels per each rental
+useEffect( () => {
+    async function distance06() {
+    const response = await axios.get(
+    `http://88.112.129.105:5000/AverageDistance06`);
+    setDistance06(response.data); }
+    distance06();
 }, [])
 
-//Function to get top 10 stations with most bike departures from 2021 05
+//Function to get average time of each bike rental
 useEffect( () => {
-    async function departure05() {
+    async function duration06() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/MostDeparture10_05`);
-    setDeparture05(response.data); }
-    departure05();
+    `http://88.112.129.105:5000/AverageDuration06`);
+    setDuration06(response.data); }
+    duration06();
+}, [])
+//Function to get average distance that bike travels per each rental
+useEffect( () => {
+    async function distance07() {
+    const response = await axios.get(
+    `http://88.112.129.105:5000/AverageDistance07`);
+    setDistance07(response.data); }
+    distance07();
 }, [])
 
-//Function to get top 10 stations with most bike returns from 2021 05
+//Function to get average time of each bike rental
 useEffect( () => {
-    async function returnstation05() {
+    async function duration07() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/MostReturn10_05`);
-    setReturnstation05(response.data); }
-    returnstation05();
-}, [])
-//Function to get top 10 stations with most bike departures from 2021 06
-useEffect( () => {
-    async function departure06() {
-    const response = await axios.get(
-    `http://88.112.129.105:5000/MostDeparture10_06`);
-    setDeparture06(response.data); }
-    departure06();
-}, [])
-
-//Function to get top 10 stations with most bike returns from 2021 06
-useEffect( () => {
-    async function returnstation06() {
-    const response = await axios.get(
-    `http://88.112.129.105:5000/MostReturn10_06`);
-    setReturnstation06(response.data); }
-    returnstation06();
-}, [])
-//Function to get top 10 stations with most bike departures from 2021 07
-useEffect( () => {
-    async function departure07() {
-    const response = await axios.get(
-    `http://88.112.129.105:5000/MostDeparture10_07`);
-    setDeparture07(response.data); }
-    departure07();
-}, [])
-
-//Function to get top 10 stations with most bike returns from 2021 07
-useEffect( () => {
-    async function returnstation07() {
-    const response = await axios.get(
-    `http://88.112.129.105:5000/MostReturn10_07`);
-    setReturnstation07(response.data); }
-    returnstation07();
+    `http://88.112.129.105:5000/AverageDuration07`);
+    setDuration07(response.data); }
+    duration07();
 }, [])
 
 return (
     <div>
-       
-        {distance.map((distance) =>
+       <div className='row' >
+        <div className='column' ><div className='moststationtopic' >Average values from 05-2021</div>
+        {distance05.map((distance05) =>
                 <div className='formflex' ><div className='formflex'> Average distance of a ride </div>
                 <div className='formboxnumber' ><div className='slidetextright' >
-                    {distance.AverageDistance}</div></div ><div className='slidetextright'> meters</div>                        
+                    {distance05.AverageDistance}</div></div ><div className='slidetextright'> meters</div>                        
                 </div>
         )}
-        {duration.map((duration) =>       
+        {duration05.map((duration05) =>       
                 <div className='formflex' ><div className='formflex'>Average duration of a ride </div>
                 <div className='formboxnumber' ><div className='slidetextright' >
-                    {duration.AverageDuration}</div></div><div className='slidetextright'>seconds</div>                                      
-                </div>          
-        )}
-        <div className='row' >
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes departured stations 05-2021</div>
-        {departure05.map((departure) =>       
-                <div className='formflex' >
-                <div className='moststationwidth' >
-                    {departure.DepartureStationName}</div>
-                <div className='' ><div className='slidetextright' >
-                    {departure.Occurrence}</div></div>                                      
-                </div>          
-        )}
-        </div> 
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes returned stations 05-2021</div>
-        {returnstation05.map((returnstation) =>       
-                <div className='formflex' >
-                <div className='moststationwidth' >
-                    {returnstation.ReturnStationName}</div>
-                <div className='' ><div className='slidetextright' >
-                    {returnstation.Occurrence}</div></div>                                    
+                    {duration05.AverageDuration}</div></div><div className='slidetextright'>seconds</div>                                      
                 </div>          
         )}
         </div>
         </div>
         <div className='row' >
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes departured stations 06-2021</div>
-        {departure06.map((departure06) =>       
-                <div className='formflex' >
-                <div className='moststationwidth' >
-                    {departure06.DepartureStationName}</div>
-                <div className='' ><div className='slidetextright' >
-                    {departure06.Occurrence}</div></div>                                      
+        <div className='column' ><div className='moststationtopic' >Average values from 06-2021</div>
+        {distance06.map((distance06) =>
+                <div className='formflex' ><div className='formflex'> Average distance of a ride </div>
+                <div className='formboxnumber' ><div className='slidetextright' >
+                    {distance06.AverageDistance}</div></div ><div className='slidetextright'> meters</div>                        
+                </div>
+        )}
+        {duration06.map((duration06) =>       
+                <div className='formflex' ><div className='formflex'>Average duration of a ride </div>
+                <div className='formboxnumber' ><div className='slidetextright' >
+                    {duration06.AverageDuration}</div></div><div className='slidetextright'>seconds</div>                                      
                 </div>          
         )}
-        </div> 
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes returned stations 06-2021</div>
-        {returnstation06.map((returnstation06) =>       
-                <div className='formflex' >
-                <div className='moststationwidth' >
-                    {returnstation06.ReturnStationName}</div>
-                <div className='' ><div className='slidetextright' >
-                    {returnstation06.Occurrence}</div></div>                                    
-                </div>          
-        )}        
         </div>
         </div>
         <div className='row' >
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes departured stations 07-2021</div>
-        {departure07.map((departure07) =>       
-                <div className='formflex' >
-                <div className='moststationwidth' >
-                    {departure07.DepartureStationName}</div>
-                <div className='' ><div className='slidetextright' >
-                    {departure07.Occurrence}</div></div>                                      
+        <div className='column' ><div className='moststationtopic' >Average values from 07-2021</div>
+        {distance07.map((distance07) =>
+                <div className='formflex' ><div className='formflex'> Average distance of a ride </div>
+                <div className='formboxnumber' ><div className='slidetextright' >
+                    {distance07.AverageDistance}</div></div ><div className='slidetextright'> meters</div>                        
+                </div>
+        )}
+        {duration07.map((duration07) =>       
+                <div className='formflex' ><div className='formflex'>Average duration of a ride </div>
+                <div className='formboxnumber' ><div className='slidetextright' >
+                    {duration07.AverageDuration}</div></div><div className='slidetextright'>seconds</div>                                      
                 </div>          
         )}
-        </div> 
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes returned stations 07-2021</div>
-        {returnstation07.map((returnstation07) =>       
-                <div className='formflex' >
-                <div className='moststationwidth' >
-                    {returnstation07.ReturnStationName}</div>
-                <div className='' ><div className='slidetextright' >
-                    {returnstation07.Occurrence}</div></div>                                    
-                </div>          
-        )}        
         </div>
         </div>
-        <div className='paddingDown'><Link to="/Allrides">Click here to see all rides from and to stations</Link> </div>
     </div>
 )
 }

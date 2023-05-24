@@ -8,7 +8,7 @@
 .topbarback{
   background-color: lightblue;
   position: sticky; top: 0;
-  
+  width: 100%;
 }
 .footer{
   position: fixed;

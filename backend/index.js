@@ -2,32 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const dbConn = require("./db/dbconfig.js");
-//const mongoose = require("mongoose");  decided to go with MySQL instead of mongodb
-//require("./db/dbconfig.js");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb",extended: true}));
-
-
-/*const dbcon = async () =>{
-    mongoose.connect("mongodb://88.112.129.105:27017/hslbike");
-    const bikedataSchema = new mongoose.Schema({});
-    const bikedata = mongoose.model("bikedata", bikedataSchema);
-    const data = await bikedata.find();
-    console.warn(data)
-}*/
-
-//Just used to test that the database connection works and print some value to the browser
-app.get('/Duration', function(req, res) {
-    dbConn.getConnection(function() {
-        dbConn.query('select count(*) from 2021_05 where Duration=20', function (error, results) {
-            if (error) throw error;
-            console.log("Durations fetched");
-            res.send(results);
-        })
-    })
-})
 
 //Get all the stations from database search full table for distinct stations
 app.get('/Stationsdistinct', function(req, res) {
@@ -62,8 +40,8 @@ app.get('/Statdis', function(req, res) {
     })
 })
 
-//Get average duration of trips
-app.get('/AverageDuration', function(req, res) {
+//Get average duration of trips for 2021 05
+app.get('/AverageDuration05', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select round(avg(Duration),0) as AverageDuration from 2021_05', function (error, results) {
             if (error) throw error;
@@ -72,9 +50,8 @@ app.get('/AverageDuration', function(req, res) {
         })
     })
 })
-
-//Get average distance of trips
-app.get('/AverageDistance', function(req, res) {
+//Get average distance of trips for 2021 05
+app.get('/AverageDistance05', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select round(avg(CoveredDistance),0) as AverageDistance from 2021_05', function (error, results) {
             if (error) throw error;
@@ -83,11 +60,40 @@ app.get('/AverageDistance', function(req, res) {
         })
     })
 })
-
-//Get average distance of trips
-app.get('/AverageDistance', function(req, res) {
+//Get average duration of trips for 2021 06
+app.get('/AverageDuration06', function(req, res) {
     dbConn.getConnection(function() {
-        dbConn.query('select round(avg(CoveredDistance),0) as AverageDistance from 2021_05', function (error, results) {
+        dbConn.query('select round(avg(Duration),0) as AverageDuration from 2021_06', function (error, results) {
+            if (error) throw error;
+            console.log("Stations fetched");
+            res.send(results);
+        })
+    })
+})
+//Get average distance of trips for 2021 06
+app.get('/AverageDistance06', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select round(avg(CoveredDistance),0) as AverageDistance from 2021_06', function (error, results) {
+            if (error) throw error;
+            console.log("Stations fetched");
+            res.send(results);
+        })
+    })
+})
+//Get average duration of trips for 2021 07
+app.get('/AverageDuration07', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select round(avg(Duration),0) as AverageDuration from 2021_07', function (error, results) {
+            if (error) throw error;
+            console.log("Stations fetched");
+            res.send(results);
+        })
+    })
+})
+//Get average distance of trips for 2021 07
+app.get('/AverageDistance07', function(req, res) {
+    dbConn.getConnection(function() {
+        dbConn.query('select round(avg(CoveredDistance),0) as AverageDistance from 2021_07', function (error, results) {
             if (error) throw error;
             console.log("Stations fetched");
             res.send(results);

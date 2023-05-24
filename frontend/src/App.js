@@ -8,6 +8,7 @@ import Frontpage from './components/Frontpage';
 import Avg from './components/Avg';
 import Allrides from './components/Allrides';
 import Top10days from './components/Top10days'
+import Top10stations from './components/Top10stations'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/Avg" element={<Avg/>}/>
       <Route path="/Allrides" element={<Allrides/>}/>
       <Route path="/Top10days" element={<Top10days/>}/>
+      <Route path="/Top10stations" element={<Top10stations/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

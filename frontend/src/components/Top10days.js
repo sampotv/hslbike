@@ -36,10 +36,10 @@ useEffect( () => {
 
 return (
     <div>
-        <h2>List of longest rides and the start station</h2>
+        <h2>The busiest days of the month</h2>
         
         <div className='row' >
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes departured stations 05-2021</div>
+        <div className='column' ><div className='moststationtopic' >Top 10 busiest rental days of 05-2021</div>
         {days05.map((days05) =>       
                 <div className='formflex' >
                 <div className='moststationwidth' >
@@ -49,7 +49,7 @@ return (
                 </div>          
         )}
         </div> 
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes returned stations 05-2021</div>
+        <div className='column' ><div className='moststationtopic' >Top 10 busiest rental days of 05-2021</div>
         {days06.map((day06) =>       
                 <div className='formflex' >
                 <div className='moststationwidth' >
@@ -61,7 +61,7 @@ return (
         </div>
         </div>
         <div className='row' >
-        <div className='column' ><div className='moststationtopic' >Top 10 most bikes departured stations 06-2021</div>
+        <div className='column' ><div className='moststationtopic' >Top 10 busiest rental days of 06-2021</div>
         {days07.map((day07) =>       
                 <div className='formflex' >
                 <div className='moststationwidth' >
@@ -70,11 +70,8 @@ return (
                     {day07.Departure_date}</div></div>                                      
                 </div>          
         )}
-        </div> 
-        
+        </div>        
         </div>
-
-        <div className='paddingDown'><Link to="/Allrides">Click here to see all rides from and to stations</Link> </div>
     </div>
 
     
