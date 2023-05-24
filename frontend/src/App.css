@@ -26,7 +26,9 @@
 .paddingDown{
   padding-bottom: 8%;
 }
-
+.paddingTop{
+  padding-top: 5%;
+}
 .stationoutput{
   text-align: left;
   margin-left: 5%;

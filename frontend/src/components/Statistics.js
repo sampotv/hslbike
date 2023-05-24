@@ -7,6 +7,7 @@ export default function front() {
 
     const [ station, setStation] = useState([]);
 
+//Function to get longest distances of rides
 useEffect( () => {
     async function station() {
     const response = await axios.get(

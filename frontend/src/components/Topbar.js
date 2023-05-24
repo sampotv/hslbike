@@ -9,7 +9,7 @@ const Topbar = () => {
                 <div className='topbar'>
                 <Link to="/stations">Bike Stations</Link></div>
                 <div className='topbar'>
-                <Link to="/statistics">Statistics</Link></div>
+                <Link to="/statistics">Longest rides</Link></div>
                 <div className='topbar'>
                 <Link to="/avg">Averages</Link></div>
                 <div className='topbar'>

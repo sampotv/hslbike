@@ -86,7 +86,7 @@ useEffect( () => {
 
 return (
     <div>
-        <h1>Test text</h1>
+       
         {distance.map((distance) =>
                 <div className='formflex' ><div className='formflex'> Average distance of a ride </div>
                 <div className='formboxnumber' ><div className='slidetextright' >
