@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-export default function front() {
+export default function Top10station() {
 
     const [ departure05, setDeparture05] = useState([]);
     const [ returnstation05, setReturnstation05] = useState([]);

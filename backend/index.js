@@ -30,7 +30,7 @@ app.get('/Stations', function(req, res) {
 })
 
 //Get information from one station with ID
-app.get('/Stations', function(req, res) {
+app.get('/Stations/:ID', function(req, res) {
     dbConn.getConnection(function() {
         dbConn.query('select * from stations WHERE ID=?',[req.params.ID], function (error, results) {
             if (error) throw error;
