@@ -13,7 +13,7 @@ const Topbar = () => {
                 <div className='topbar'>
                 <Link to="/avg">Averages</Link></div>
                 <div className='topbar'>
-                </div>            
+                <Link to="/Top10days">Top10 busiest days</Link></div>            
         </div>
     )
 
