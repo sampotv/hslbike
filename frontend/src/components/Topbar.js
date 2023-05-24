@@ -13,7 +13,7 @@ const Topbar = () => {
                 <div className='topbar'>
                 <Link to="/avg">Averages</Link></div>
                 <div className='topbar'>
-                <Link to="/logout">Logout</Link></div>            
+                </div>            
         </div>
     )
 
