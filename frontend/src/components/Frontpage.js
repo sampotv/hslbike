@@ -12,7 +12,7 @@ const [ test, setTest ] = useState([]);
 useEffect( () => {
     async function duration() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/Duration`);
+    `http://localhost:5000/Duration`);
     setTest(response.data); }
     duration();
 }, [])
@@ -21,7 +21,7 @@ useEffect( () => {
 useEffect( () => {
     async function station() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/Stations`);
+    `http://localhost:5000/Stations`);
     setStation(response.data); }
     station();
 }, [])

@@ -10,7 +10,7 @@ export default function front() {
 useEffect( () => {
     async function station() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/Statdur`);
+    `http://localhost:5000/Statdur`);
     setStation(response.data); }
     station();
 }, [])

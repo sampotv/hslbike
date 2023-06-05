@@ -13,7 +13,7 @@ export default function topdays() {
 useEffect( () => {
     async function days05() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/top10day05`);
+    `http://localhost:5000/top10day05`);
     setDays05(response.data); }
     days05();
 }, [])
@@ -21,7 +21,7 @@ useEffect( () => {
 useEffect( () => {
     async function days06() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/top10day06`);
+    `http://localhost:5000/top10day06`);
     setDays06(response.data); }
     days06();
 }, [])
@@ -29,7 +29,7 @@ useEffect( () => {
 useEffect( () => {
     async function days07() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/top10day07`);
+    `http://localhost:5000/top10day07`);
     setDays07(response.data); }
     days07();
 }, [])

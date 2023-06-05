@@ -3,8 +3,8 @@ var mysql = require('mysql');
 //database information
 var dbConn = mysql.createPool({
 	host:'localhost',
-	user:'hsluser',
-	password:'Hslpass90',
+	user:'root',
+	password:'kuppi',
 	database:'hsldb',
   acquireTimeout: 1000,
   connectionLimit: 100

@@ -13,7 +13,7 @@ export default function front() {
 useEffect( () => {
     async function departure() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/MostDepartureAll`);
+    `http://localhost:5000/MostDepartureAll`);
     setDeparture(response.data); }
     departure();
 }, [])
@@ -22,7 +22,7 @@ useEffect( () => {
 useEffect( () => {
     async function returnstation() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/MostReturnAll`);
+    `http://localhost:5000/MostReturnAll`);
     setReturnstation(response.data); }
     returnstation();
 }, [])

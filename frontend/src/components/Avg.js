@@ -16,7 +16,7 @@ export default function front() {
 useEffect( () => {
     async function distance05() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDistance05`);
+    `http://localhost:5000/AverageDistance05`);
     setDistance05(response.data); }
     distance05();
 }, [])
@@ -25,7 +25,7 @@ useEffect( () => {
 useEffect( () => {
     async function duration05() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDuration05`);
+    `http://localhost:5000/AverageDuration05`);
     setDuration05(response.data); }
     duration05();
 }, [])
@@ -33,7 +33,7 @@ useEffect( () => {
 useEffect( () => {
     async function distance06() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDistance06`);
+    `http://localhost:5000/AverageDistance06`);
     setDistance06(response.data); }
     distance06();
 }, [])
@@ -42,7 +42,7 @@ useEffect( () => {
 useEffect( () => {
     async function duration06() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDuration06`);
+    `http://localhost:5000/AverageDuration06`);
     setDuration06(response.data); }
     duration06();
 }, [])
@@ -50,7 +50,7 @@ useEffect( () => {
 useEffect( () => {
     async function distance07() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDistance07`);
+    `http://localhost:5000/AverageDistance07`);
     setDistance07(response.data); }
     distance07();
 }, [])
@@ -59,7 +59,7 @@ useEffect( () => {
 useEffect( () => {
     async function duration07() {
     const response = await axios.get(
-    `http://88.112.129.105:5000/AverageDuration07`);
+    `http://localhost:5000/AverageDuration07`);
     setDuration07(response.data); }
     duration07();
 }, [])
