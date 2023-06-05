@@ -6,7 +6,7 @@ export default function Onestatio() {
 
     const [onestation, setOnestation] = useState([]);
     const {ID} = useParams();
-    const [ station, setStation] = useState([]);
+
 /* Function to get information from one station
  * http://88.112.129.105:5000/Stations/1 works backend is fine
  * Something wrong with useParams, doesn't make calls
@@ -17,14 +17,8 @@ export default function Onestatio() {
         `http://88.112.129.105:5000/Stations/${ID}`);
         setOnestation(response.data); }
         station();
-    }, [ID])
-    useEffect( () => {
-        async function station() {
-        const response = await axios.get(
-        `http://88.112.129.105:5000/Stations`);
-        setStation(response.data); }
-        station();
     }, [])
+
     return (
         <div className="">
             UseParams problem, time is of the essence and have to go to Spain...

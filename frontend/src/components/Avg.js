@@ -87,7 +87,7 @@ return (
         {distance06.map((distance06) =>
                 <div className='formflex' ><div className='formflex'> Average distance of a ride </div>
                 <div className='formboxnumber' ><div className='slidetextright' >
-                    {distance06.AverageDistance}</div></div ><div className='slidetextright'> meters</div>                        
+                    {distance06.AverageDistance}</div></div ><div className='slidetextright'> kilometers</div>                        
                 </div>
         )}
         {duration06.map((duration06) =>       
@@ -103,7 +103,7 @@ return (
         {distance07.map((distance07) =>
                 <div className='formflex' ><div className='formflex'> Average distance of a ride </div>
                 <div className='formboxnumber' ><div className='slidetextright' >
-                    {distance07.AverageDistance}</div></div ><div className='slidetextright'> meters</div>                        
+                    {distance07.AverageDistance}</div></div ><div className='slidetextright'> kilometers</div>                        
                 </div>
         )}
         {duration07.map((duration07) =>       
