@@ -20,9 +20,9 @@ Page to view busiest days of months
 ![busiestdaysview](https://github.com/sampotv/hslbike/assets/91623423/6cd21d40-4c82-4feb-8631-1c2c3f226428)
 
 
-Application is running on my own Ubuntu server at http://88.112.129.105:3000 Server was built just to get this project running on it. Parts for the server was salvaged from friends, thanks guys.
+Application is running on my own Ubuntu server at http://212.90.86.63:3000 Server was built just to get this project running on it. Parts for the server was salvaged from friends, thanks guys.
 
-Modified databases can be downloaded from http://88.112.129.105/hsldb/ Project can be run on own computer after git pull. Back-end is started from /backend/ node index.js front-end is started from /frontend/ npm start. Git file hsldb.sql holds the information to create MySQL database.
+Modified databases can be downloaded from http://212.90.86.63/hsldb/ Project can be run on own computer after git pull. Back-end is started from /backend/ node index.js front-end is started from /frontend/ npm start. Git file hsldb.sql holds the information to create MySQL database.
 
 To get data into tables .csv files need to be loaded into database with following commands:
 
